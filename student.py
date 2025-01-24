@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 
 def main():
-    msg = "hi hello again"
-    print(msg) 
-
     res = []
    
     with open("data.txt","r", encoding="utf-8") as file_:
