@@ -13,7 +13,6 @@ def get_logins(filename, url="https://github.com/"):
     
     Args:
         filename - path to file with fio and logins. Example:
-           pfrfm;tata
            Невеличка Проблема;Immortalgleam
            Най Буде;anetto-2
     Returns:

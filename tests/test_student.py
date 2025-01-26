@@ -10,7 +10,9 @@ def file_student(tmpdir):
     filename = tmpdir.join(filename)
     with open(filename, "w") as file_:
         file_.write("""
+        
         Невеличка Проблема;Immortalgleam
+'Най Буде;anetto-2
 """)
     return filename
 
@@ -25,7 +27,8 @@ def file_student_wrong(tmpdir):
     return filename
 
 def test_student(file_student):
-    sh_ans = []
+    sh_ans = [{'fio': 'Невеличка Проблема', 'login': 'Immortalgleam'}, {'fio': 'Най Буде', 'login': 'anetto-2'}]
     ans = get_logins(file_student)
+    print(ans)
 
     assert sh_ans == ans
