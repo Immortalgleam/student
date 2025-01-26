@@ -7,6 +7,8 @@ pfrfm;tata
 Най Буде;anetto-2
 
 """
+import requests
+
 def get_logins(filename):
     """Get fio and logins from file filename
     
@@ -26,8 +28,10 @@ def get_logins(filename):
 
      Raises:
          ValueError: if bad filename format (no ; in line)
+         RuntimeError: if no login found at github.com
     """
     res = []
+    url = "https://github.com/"
    
     with open(filename,"r", encoding="utf-8") as file_:
         for line in file_:
@@ -41,6 +45,12 @@ def get_logins(filename):
                     "fio": fio,
                     "login": login,
                 })
+                repo_url = f"{url}{login}"
+                print(f"repo is {repo_url}")
+                responce = requests.get(repo_url)
+                print(responce)
+                if responce.status_code != 200:
+                    raise RuntimeError("no such user")
             except ValueError as err:
                 print(f"Cannot parse file: {err}")
                 raise
