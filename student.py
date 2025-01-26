@@ -16,7 +16,16 @@ def get_logins(filename):
            Невеличка Проблема;annetto-
            Най Буде;anetto-2
     Returns:
-        None
+        lists of dicts with "fio" and "login" parsed filename
+        Example:
+        [
+          {'fio': 'pfrfm', 'login': 'tata'},
+          {'fio': 'Невеличка Проблема', 'login': 'annetto-'},
+          {'fio': 'Най Буде', 'login': 'anetto-2'}
+        ]
+
+     Raises:
+         ValueError: if bad filename format (no ; in line)
     """
     res = []
    
@@ -34,18 +43,18 @@ def get_logins(filename):
                 })
             except ValueError as err:
                 print(f"Cannot parse file: {err}")
-                return
+                raise
 
-    print(res)
+    return res
 
 def main():
     """Main func
     """
     filename = "data.txt"
-    get_logins(filename)
+    return get_logins(filename)
 
 if __name__ == "__main__":
-    main()
+    print (main())
 
 
 
