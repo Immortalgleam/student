@@ -9,7 +9,7 @@ pfrfm;tata
 """
 import requests
 
-def get_logins(filename):
+def get_logins(filename, url="https://github.com/"):
     """Get fio and logins from file filename
     
     Args:
@@ -31,7 +31,6 @@ def get_logins(filename):
          RuntimeError: if no login found at github.com
     """
     res = []
-    url = "https://github.com/"
    
     with open(filename,"r", encoding="utf-8") as file_:
         for line in file_:

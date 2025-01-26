@@ -2,7 +2,7 @@
 
 ## Quickstart
 ```bash
-pip install -r requirements.txt
+brew install -r requirements.txt
 
 python3 -m student
 ```
