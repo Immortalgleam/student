@@ -59,7 +59,7 @@ def get_logins(filename, url="https://github.com/"):
 def main():
     """Main func
     """
-    filename = "data.txt"
+    filename = "data/data.txt"
     return get_logins(filename)
 
 if __name__ == "__main__":
