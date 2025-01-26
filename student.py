@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-def main():
+def get_logins(filename):
     res = []
    
-    with open("data.txt","r", encoding="utf-8") as file_:
+    with open(filename,"r", encoding="utf-8") as file_:
         for line in file_:
             try:
                 fio, login = line.split(";")
@@ -20,6 +20,10 @@ def main():
                 return
 
     print(res)
+
+def main():
+    filename = "data.txt"
+    get_logins(filename)
 
 if __name__ == "__main__":
     main()
