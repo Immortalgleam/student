@@ -1,6 +1,23 @@
 #!/usr/bin/env python3
+"""Studenut module
+get_logins parses data.txt with fio and login, example:
 
+pfrfm;tata
+Невеличка Проблема;annetto-
+Най Буде;anetto-2
+
+"""
 def get_logins(filename):
+    """Get fio and logins from file filename
+    
+    Args:
+        filename - path to file with fio and logins. Example:
+           pfrfm;tata
+           Невеличка Проблема;annetto-
+           Най Буде;anetto-2
+    Returns:
+        None
+    """
     res = []
    
     with open(filename,"r", encoding="utf-8") as file_:
@@ -22,6 +39,8 @@ def get_logins(filename):
     print(res)
 
 def main():
+    """Main func
+    """
     filename = "data.txt"
     get_logins(filename)
 
