@@ -2,9 +2,8 @@
 """Studenut module
 get_logins parses data.txt with fio and login, example:
 
-pfrfm;tata
-Невеличка Проблема;annetto-
-Най Буде;anetto-2
+Невеличка Проблема;Immortalgleam
+Най Буде;annetto-2
 
 """
 import requests
@@ -15,14 +14,13 @@ def get_logins(filename, url="https://github.com/"):
     Args:
         filename - path to file with fio and logins. Example:
            pfrfm;tata
-           Невеличка Проблема;annetto-
+           Невеличка Проблема;Immortalgleam
            Най Буде;anetto-2
     Returns:
         lists of dicts with "fio" and "login" parsed filename
         Example:
         [
-          {'fio': 'pfrfm', 'login': 'tata'},
-          {'fio': 'Невеличка Проблема', 'login': 'annetto-'},
+          {'fio': 'Невеличка Проблема', 'login': 'Immortalgleam'},
           {'fio': 'Най Буде', 'login': 'anetto-2'}
         ]
 
