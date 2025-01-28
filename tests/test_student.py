@@ -32,7 +32,5 @@ def test_student(file_student):
     assert ans == sh_ans
 
 def test_student_wrong(file_student_wrong):
-    sh_ans = [{'fio': 'Невеличка Проблема', 'login': 'Immortalgleam'},
-              {'fio': 'Най Буде', 'login': 'Imortalgleam'}]
     with pytest.raises(RuntimeError):
         ans = get_logins(file_student_wrong)
