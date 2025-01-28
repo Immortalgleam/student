@@ -10,7 +10,7 @@ def file_student(tmpdir):
     filename = tmpdir.join(filename)
     with open(filename, "w") as file_:
         file_.write("""Невеличка Проблема ; Immortalgleam
-Най Буде;anetto-2
+Най Буде;Immortalgleam
 """)
     return filename
 
@@ -25,11 +25,14 @@ def file_student_wrong(tmpdir):
     return filename
 
 def test_student(file_student):
-    sh_ans = [{'fio': 'Невеличка Проблема', 'login': 'Immortalgleam'}, {'fio': 'Най Буде', 'login': 'anetto-2'}]
+    sh_ans = [{'fio': 'Невеличка Проблема', 'login': 'Immortalgleam'},
+              {'fio': 'Най Буде', 'login': 'Immortalgleam'}]
     ans = get_logins(file_student)
 
     assert ans == sh_ans
 
 def test_student_wrong(file_student_wrong):
+    sh_ans = [{'fio': 'Невеличка Проблема', 'login': 'Immortalgleam'},
+              {'fio': 'Най Буде', 'login': 'Imortalgleam'}]
     with pytest.raises(RuntimeError):
         ans = get_logins(file_student_wrong)
