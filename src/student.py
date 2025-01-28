@@ -2,7 +2,7 @@
 """Studenut module
 get_logins parses data.txt with fio and login, example:
 
-Невеличка Проблема;Immortalgleam
+Невеличка Проблема ; Immortalgleam
 Най Буде;annetto-2
 
 """
@@ -13,8 +13,9 @@ def get_logins(filename, url="https://github.com/"):
     
     Args:
         filename - path to file with fio and logins. Example:
-           Невеличка Проблема;Immortalgleam
+           Невеличка Проблема ; Immortalgleam
            Най Буде;anetto-2
+
     Returns:
         lists of dicts with "fio" and "login" parsed filename
         Example:
@@ -36,7 +37,7 @@ def get_logins(filename, url="https://github.com/"):
                 fio = fio.strip()                
                 login = login.strip()
             
-                print(f"fio = {fio} login = {login}")
+                print(f"fio={fio} login={login}")
                 res.append({
                     "fio": fio,
                     "login": login,
